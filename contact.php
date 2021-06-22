@@ -1,4 +1,19 @@
 <?php
+	/////
+	namespace AnnaSharipkin;
+		//Import PHPMailer classes into the global namespace
+		use PHPMailer\PHPMailer;
+		use PHPMailer\SMTP;
+		use PHPMailer\Exception;
+
+		//Include PHPMailer library files
+		require 'PHPMailer/PHPMailer.php';
+		require 'PHPMailer/SMTP.php';
+		require 'PHPMailer/Exception';
+
+		$mail = new PHPMailer();
+	/////
+
 	if (isset($_POST["submit"])) {
 		
 		//bdika
@@ -14,7 +29,7 @@
 		//email settings
 		$mail->isHTML(true); 
 		$mail->setFrom($email, $name); 
-		$mail->addAddress('sharipki
+		$mail->addAddress('sharipkinanna@gmail.com');
 		//sofbdika
 		
 		$name = $_POST['name'];
