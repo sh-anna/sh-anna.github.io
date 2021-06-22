@@ -1,6 +1,4 @@
 <?php
-	/////
-	namespace AnnaSharipkin;
 		//Import PHPMailer classes into the global namespace
 		use PHPMailer\PHPMailer;
 		use PHPMailer\SMTP;
@@ -21,8 +19,8 @@
 		$mail->isSMTP();                                            
 		$mail->Host = 'smtp.example.com';                     
 		$mail->SMTPAuth = true;                                  
-		$mail->Username = 'sharipkinanna@gmail.com';                     
-		$mail->Password = '1609tygarin1';                               
+		$mail->Username = 'myGmailAdress';                     
+		$mail->Password = 'myGmailPassword';                               
 		$mail->SMTPSecure = 'tls';        
 		$mail->Port = 465; 
 
@@ -42,9 +40,16 @@
 		$body = "From: $name\n E-Mail: $email\n Subject: $subject\n Message:\n $message";
 	
 
-	mail($to, $subject, $body, $from) or die("Error!");
+// 	mail($to, $subject, $body, $from) or die("Error!");
 
-	header("location: thank-you.html");
+// 	header("location: thank-you.html");
+		
+		if (!$mail->send()) {
+			echo 'Message could not be sent. Mailer Error: ' . $mail->ErrorInfo;
+		} else {
+			header("location: thank-you.html");
+			echo 'The email message was sent.';
+		}
 	
 	}
 	
