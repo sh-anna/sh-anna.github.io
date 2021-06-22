@@ -1,15 +1,6 @@
 <?php
-		//Import PHPMailer classes into the global namespace
-		use PHPMailer\PHPMailer;
-		use PHPMailer\SMTP;
-		use PHPMailer\Exception;
-
-		//Include PHPMailer library files
-		require 'PHPMailer/PHPMailer.php';
-		require 'PHPMailer/SMTP.php';
-		require 'PHPMailer/Exception';
-
-		$mail = new PHPMailer();
+		
+		
 	/////
 
 		//bdika
@@ -17,8 +8,8 @@
 		$mail->isSMTP();                                            
 		$mail->Host = 'smtp.gmail.com';                     
 		$mail->SMTPAuth = true;                                  
-		$mail->Username = 'myGmailAdress';                     
-		$mail->Password = 'myGmailPassword';                               
+		$mail->Username = 'sharipkinanna@gmail.com';                     
+		$mail->Password = '1609tygarin1';                               
 		$mail->SMTPSecure = 'tls';        
 		$mail->Port = 465; 
 		$mail->isHTML(true); 
