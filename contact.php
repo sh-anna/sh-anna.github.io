@@ -25,7 +25,7 @@
 			$email = $_POST['email'];
 			$message = $_POST['message'];
 			$from = 'From Client Contact Form'; 
-			$to = 'sharipkinanna@gmail.com'; 
+			$to = 'myGmailAdress'; 
 			$subject = $_POST['subject']; 
 		
 			$body = "From: $name\n E-Mail: $email\n Subject: $subject\n Message:\n $message";
