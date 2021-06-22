@@ -12,8 +12,6 @@
 		$mail = new PHPMailer();
 	/////
 
-	if (isset($_POST["submit"])) {
-		
 		//bdika
 		//smtp settings
 		$mail->isSMTP();                                            
@@ -28,7 +26,14 @@
 		$mail->isHTML(true); 
 		$mail->setFrom($email, $name); 
 		$mail->addAddress('sharipkinanna@gmail.com');
+		$mail->Subject = ('$email ($subject)'); 
+		$mail->Body = $message;
 		//sofbdika
+
+
+		if (isset($_POST["submit"])) {
+		
+		
 		
 		$name = $_POST['name'];
 		$email = $_POST['email'];
@@ -40,17 +45,10 @@
 		$body = "From: $name\n E-Mail: $email\n Subject: $subject\n Message:\n $message";
 	
 
-// 	mail($to, $subject, $body, $from) or die("Error!");
-
-// 	header("location: thank-you.html");
+		mail($to, $subject, $body, $from) or die("Error!");
+		header("location: thank-you.html");
 		
-		if (!$mail->send()) {
-			echo 'Message could not be sent. Mailer Error: ' . $mail->ErrorInfo;
-		} else {
-			header("location: thank-you.html");
-			echo 'The email message was sent.';
-		}
-	
+		
 	}
 	
 ?>
