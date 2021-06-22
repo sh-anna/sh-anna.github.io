@@ -29,7 +29,6 @@
 			$subject = $_POST['subject']; 
 		
 			$body = "From: $name\n E-Mail: $email\n Subject: $subject\n Message:\n $message";
-	
 
 			mail($to, $subject, $body, $from) or die("Error!");
 			header("location: thank-you.html");	
